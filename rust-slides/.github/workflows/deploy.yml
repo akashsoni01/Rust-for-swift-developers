@@ -25,7 +25,7 @@ jobs:
         # Set the BASE_PATH environment variable for SvelteKit
         # This makes sure the app knows its assets are at /<repository_name>/
         env:
-          BASE_PATH: /Rust-for-swift-developers/rust-slides
+          BASE_PATH: /Rust-for-swift-developers
         run: npm run build # Run the SvelteKit build command
 
       - name: Deploy to GitHub Pages

@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # This workflow will run whenever you push to the 'main' branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Run the job on the latest version of Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 # This action checks out your repository code
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use Node.js version 18
+
+      - name: Install dependencies
+        run: npm install # Install your project's npm packages
+
+      - name: Build the project
+        # Set the BASE_PATH environment variable for SvelteKit
+        # This makes sure the app knows its assets are at /<repository_name>/
+        env:
+          BASE_PATH: /Rust-for-swift-developers/rust-slides
+        run: npm run build # Run the SvelteKit build command
+
+      - name: Deploy to GitHub Pages
+        # This action deploys the built files to the gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch to deploy to
+          folder: docs # The folder containing the built files (from svelte.config.js)

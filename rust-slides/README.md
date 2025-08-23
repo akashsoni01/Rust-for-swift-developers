@@ -39,3 +39,6 @@ You can preview the production build with `npm run preview`.
 
 
 deno add npm:gh-pages
+
+
+https://michaelish.hashnode.dev/step-by-step-guide-to-integrating-mdsvex-sveltekit-v5-and-tailwind-css-for-best-performance

@@ -12,6 +12,7 @@
 
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
+const dev = process.argv.includes('dev');
 
 const config = {
   kit: {
@@ -22,6 +23,9 @@ const config = {
     prerender: {
       entries: ['*'] // prerender all pages
     },
+	paths: {
+      base: dev ? '' : '/Rust-for-swift-developers'
+    }
   },
 	preprocess: [mdsvex()],
 	extensions: ['.svelte', '.svx'],

@@ -1,14 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
-	import Slides from './Slides.svelte';
+	import Slides from '../lib/Slides.svelte';
 	// import Slide from '$lib/Slide.svelte';
 
 	let current = 0;
 
 	const slides = [
 		{
-			title: 'Functional Programming in Rust',
-			content: 'An introduction to FP concepts with Rust'
+			title: 'Introduction to Rust',
+			content: 'An introduction Rust concepts'
 		},
 		{
 			title: 'Ownership',
@@ -26,8 +26,7 @@ println!("{}", x); // error`
 		{
 			title: 'Traits',
 			code: `use std::ops::Add;
-
-impl Add for Complex {
+			impl Add for Complex {
     type Output = Complex;
     fn add(self, other: Complex) -> Complex {
         Complex { re: self.re + other.re, im: self.im + other.im }

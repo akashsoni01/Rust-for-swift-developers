@@ -1,3 +1,18 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Custom slide styling */
+.slide {
+  @apply flex flex-col justify-center items-center h-screen text-white bg-gray-900;
+}
+
+.code {
+  @apply bg-gray-800 rounded-xl p-4 text-sm font-mono text-green-300 overflow-auto;
+}

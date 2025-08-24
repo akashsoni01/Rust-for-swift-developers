@@ -16,6 +16,7 @@
 	},
 	"dependencies": {
 		"@shikijs/markdown-it": "^3.11.0",
+		"@tailwindplus/elements": "^1.0.9",
 		"gh-pages": "^6.3.0",
 		"shiki": "^3.11.0"
 	},
